@@ -1,0 +1,16 @@
+{
+    "prayers" : {
+        "morning" : {
+                "title":"a",
+                "subtitle":"b",
+                "prayer":"c"        
+                }
+            ,
+            "after" : {
+                "title":"d",
+                "subtitle":"e",
+                "prayer":"f"        
+                }
+            }
+        }
+ 
