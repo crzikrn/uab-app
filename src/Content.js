@@ -184,7 +184,10 @@ class Clock extends React.Component {
       } 
       else {
         return(
-          <h1 >You Ready to Sleep?</h1>
+            <div>
+                <h1 >You Ready to Sleep?</h1>
+                <Read />
+            </div>
         )
       }
     }
