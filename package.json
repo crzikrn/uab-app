@@ -1,6 +1,7 @@
 {
   "name": "uab-app",
   "version": "0.1.0",
+  "homepage": "https://crzikrn.github.io/uab-app",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
