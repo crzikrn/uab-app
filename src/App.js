@@ -27,8 +27,20 @@ class Header extends Component {
 
 class Footer extends Component {
   render(){
+    let footerBox= {
+      display: "flex",
+      background: "black",
+      color:"white",
+      height: "50px",
+      marginTop:"100px",
+      fontStyle:"regular",
+      fontSize: "14px"
+    }
+
     return(
-      <div style={{marginBottom : "100px"}}></div>
+      <div style={{...footerBox,...paddingSpread,...flexSpread}}>
+        <p className="headerStyle">Copyright © 2017 | uponafterbefore.com</p>
+      </div>
     )
   }
 }
@@ -36,9 +48,10 @@ class Footer extends Component {
 
 class App extends Component {
   render() {
+   
     
     return (
-      <div className="App">       
+      <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between"}} className="App">       
         <Header />
         <Content />
         <Footer />
