@@ -89,36 +89,6 @@ function Bar(props){
     
   }
   
-//   function Greeting(props){
-    
-//       let hours = new Date();
-//       let greeting= ''
-  
-//       if(hours.getHours() > 25){
-//         return(
-//           <h1 >You Ready to Start?</h1>
-//         )
-//       } else if(hours.getHours() < 11){
-//         return(
-//             <div>
-//             {console.log(props.data)}
-//             {/* {Object.keys(props.after).map((item,i) => (
-//                 <li key={i}>
-//                     {props.after[item]}
-//                 </li>
-//             ))} */}
-        
-//             </div>
-//         //   <Read />
-//         )
-//       } else {
-//         return(
-//           <h1 >You Ready to Sleep?</h1>
-//         )
-//       }
-//   }
-
-
 class Greeting extends Component{
     render(){
         const data = this.props.data;
@@ -157,7 +127,7 @@ class Read extends Component {
         <div style={{display:"flex",flexDirection:"column",width: "90%",marginTop: "40px"}}>
           <h1 style={{textAlign: "left"}}>{this.props.title}</h1>
           <h2 style={{textAlign: "left",marginTop: "20px"}}>{this.props.subtitle}</h2>
-          <p style={{lineHeight: "28px", marginTop: "40px"}}>{this.props.prayer}
+          <p style={{lineHeight: "33px", marginTop: "40px"}}>{this.props.prayer}
             <span style={{dispaly:"inline", fontStyle: "italic"}}> Amen.</span>
           </p>
         </div>
