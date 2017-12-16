@@ -6,11 +6,6 @@ import Clock from './Clock.js';
 let {paddingSpread} = require('./Css');
 let {flexSpreadColumn} = require('./Css');
 
-let morning = "Are you Ready to Start?";
-let work = "You Ready to Work?";
-let subWork = "Prayer upon Beginning Ones Work or Study";
-let prayer = "My good God, Father, and Saviour, grant me aid by your Holy Spirit to now work fruitfully in my vocation, which is from you, all in order to love you and the people around me rather than for my own gain and glory. Give me wisdom, judgment and prudence, and freedom from my besetting sins. Bring me under the rule of true humility. Let me accept with patience whatever amount of fruitfulness or difficulty in my work that you give me this day. And in all I do, help me to rest always in my Lord Jesus Christ and in his grace alone for my salvation and life. Hear me, merciful Father, by our Lord Jesus Christ, ";
-
 //let url = './data/data.json';
 let url = 'http://localhost:3000/data/data.json'
 
@@ -21,6 +16,7 @@ class Prayer extends Component {
             error: null,
             isLoaded: false,
             data: [],
+            sendData: null
         };
     }
 
@@ -29,13 +25,10 @@ class Prayer extends Component {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    console.log(result.prayers)
-                    
                     this.setState({
                         isLoaded: true,
                         data: result.prayers
                     });
-
                 },
                 (error) => {
                     this.setState({
@@ -63,24 +56,23 @@ class Prayer extends Component {
             // const after = Object.keys(data.after).map(key =>
             //     <div value={key}>{data.after[key]}</div>
             // )
-
-            for (let item of data){
-                console.log(item)
-            }
-
-              return(
-               
+            // console.log(data);
+            // for(let item of data){
+            //     console.log(item.morning)
+            // }
+              return(   
                 <div>
-                     {console.log(data)}
-                    <Greeting data={data}/>
-
+                    <Greeting data={data}></Greeting>
                 </div>
               )
-          }
+            
+        }
     }
 }
   
-  function Bar(props){
+
+
+function Bar(props){
   
       let width = props.value*50;
   
@@ -128,49 +120,45 @@ class Prayer extends Component {
 
 
 class Greeting extends Component{
-    constructor(props){
-        super(props);
-    }
-
     render(){
         const data = this.props.data;
         console.log(data)
-        let hours = newFunction();
+    let hours = newFunction();
     
-    if(hours.getHours() > 25){
+    if(hours.getHours() > 6 && hours.getHours() <12){
+        document.body.style.background = "linear-gradient(135deg, cyan, 30%, yellow) fixed";
         return(
-          <h1 >You Ready to Start?</h1>
+            <Read title={data[0].morning.title} subtitle={data[0].morning.subtitle} prayer={data[0].morning.prayer}/>
         )
       } 
       else if(hours.getHours() < 11){ 
         return(
             <div>
-               {/* {this.props.data} */}
-                {/* <h1 >You Ready to Sleep?</h1> */}
-                {/* <Read data={this.props.data}/> */}
+         
             </div>
         )
       } 
       else {
+        document.body.style.background = "linear-gradient(135deg, orange, 60%, yellow) fixed";
         return(
-              {/* <Read /> */}     
+            <Read title={data[1].after.title} subtitle={data[1].after.subtitle} prayer={data[1].after.prayer}/>
         )
       }
     }
   }
   
-  class Read extends Component {
+class Read extends Component {
     render(){
      
-      document.body.style.background = "linear-gradient(135deg, orange, 60%, yellow) fixed";
+     
       console.log(this.props.title)
       return(
    
-        <div style={{width: "75%",marginTop: "40px"}}>
-          <h1 style={{textAlign: "center"}}>{this.props.title}</h1>
-          <h2 style={{textAlign: "center",marginTop: "20px"}}>{this.props.subtitle}</h2>
+        <div style={{display:"flex",flexDirection:"column",width: "90%",marginTop: "40px"}}>
+          <h1 style={{textAlign: "left"}}>{this.props.title}</h1>
+          <h2 style={{textAlign: "left",marginTop: "20px"}}>{this.props.subtitle}</h2>
           <p style={{marginTop: "40px"}}>{this.props.prayer}
-            <p style={{dispaly:"inline", fontStyle: "italic"}}>Amen.</p>
+            <span style={{dispaly:"inline", fontStyle: "italic"}}> Amen.</span>
           </p>
         </div>
       )
@@ -185,11 +173,11 @@ class Content extends Component {
       }
       
       return(
-        <div style={{...paddingSpread,...flexSpreadColumn}}>
+        <div style={{...paddingSpread}}>
           <h1 style={{...timeStyle}}>It's </h1>
           <Clock />
           <Bar value="3" />
-          <Greeting />
+          {/* <Greeting /> */}
           <Prayer />
         </div>
       )

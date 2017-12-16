@@ -2,14 +2,15 @@
     "prayers" : [{
         "morning" : {
                 "title":"You Ready to Start?",
-                "subtitle":"b",
-                "prayer":"c"        
+                "subtitle":"Prayer upon Rising from Sleep",
+                "prayer":"My God, Father, and Saviour, since you have been pleased to give me the grace to come through the night to the present day, now grant that I may employ it entirely in your service, so that all my works may be to the glory of your name and the edification of my neighbours. As you have been pleased to make your sun shine upon the earth to give us bodily light, grant the light of your Spirit to illumine my understanding and my heart. And because it means nothing to begin well if one does not persevere, I ask that you would continue to increase your grace in me until you have led me into full communion with your Son, Jesus Christ our Lord, who is the true Sun of our souls, shining day and night, eternally and without end. Hear me, merciful Father, by our Lord Jesus Christ"        
                 }
             },
             {"after" : {
                 "title":"You Ready to Work?",
                 "subtitle":"Prayer upon Beginning Ones Work or Study",
-                "prayer":"prayer for after"        
+                "prayer":"My good God, Father, and Saviour, grant me aid by your Holy Spirit to now work fruitfully in my vocation, which is from you, all in order to love you and the people around me rather than for my own gain and glory. Give me wisdom, judgment and prudence, and freedom from my besetting sins. Bring me under the rule of true humility. Let me accept with patience whatever amount of fruitfulness or difficulty in my work that you give me this day. And in all I do, help me to rest always in my Lord Jesus Christ and in his grace alone for my salvation and life. Hear me, merciful Father, by our Lord Jesus Christ, "
+                
                 }
             }]
         }

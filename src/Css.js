@@ -12,7 +12,7 @@ module.exports={
      flexSpreadColumn : { 
        display: "flex",
        flexDirection: "column",
-       // justifyContent: "space-between",
+    //    justifyContent: "center",
        alignItems: "center"
      }
 }
