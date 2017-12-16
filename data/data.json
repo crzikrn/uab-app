@@ -1,16 +1,16 @@
 {
-    "prayers" : {
+    "prayers" : [{
         "morning" : {
-                "title":"a",
+                "title":"You Ready to Start?",
                 "subtitle":"b",
                 "prayer":"c"        
                 }
-            ,
-            "after" : {
-                "title":"d",
-                "subtitle":"e",
-                "prayer":"f"        
+            },
+            {"after" : {
+                "title":"You Ready to Work?",
+                "subtitle":"Prayer upon Beginning Ones Work or Study",
+                "prayer":"prayer for after"        
                 }
-            }
+            }]
         }
  
