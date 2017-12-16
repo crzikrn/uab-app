@@ -32,7 +32,6 @@ class Footer extends Component {
       background: "black",
       color:"white",
       height: "50px",
-      marginTop:"100px",
       fontStyle:"regular",
       fontSize: "14px"
     }
@@ -53,7 +52,7 @@ class App extends Component {
     return (
       <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between"}} className="App">       
         <Header />
-        <Content />
+        <Content style={{marginBottom:"100px"}}/>
         <Footer />
       </div>
     );

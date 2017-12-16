@@ -124,7 +124,7 @@ class Read extends Component {
       console.log(this.props.title)
       return(
    
-        <div style={{display:"flex",flexDirection:"column",width: "90%",marginTop: "40px"}}>
+        <div style={{display:"flex",flexDirection:"column",width: "90%",marginTop: "40px",marginBottom:"100px"}}>
           <h1 style={{textAlign: "left"}}>{this.props.title}</h1>
           <h2 style={{textAlign: "left",marginTop: "20px"}}>{this.props.subtitle}</h2>
           <p style={{lineHeight: "33px", marginTop: "40px"}}>{this.props.prayer}
