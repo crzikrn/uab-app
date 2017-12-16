@@ -6,8 +6,8 @@ import Clock from './Clock.js';
 let {paddingSpread} = require('./Css');
 let {flexSpreadColumn} = require('./Css');
 
-//let url = './data/data.json';
-let url = 'http://localhost:3000/data/data.json'
+let url = './data/data.json';
+// let url = 'http://localhost:3000/data/data.json'
 
 class Prayer extends Component {
     constructor(props){
