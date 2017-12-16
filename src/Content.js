@@ -157,7 +157,7 @@ class Read extends Component {
         <div style={{display:"flex",flexDirection:"column",width: "90%",marginTop: "40px"}}>
           <h1 style={{textAlign: "left"}}>{this.props.title}</h1>
           <h2 style={{textAlign: "left",marginTop: "20px"}}>{this.props.subtitle}</h2>
-          <p style={{marginTop: "40px"}}>{this.props.prayer}
+          <p style={{lineHeight: "28px", marginTop: "40px"}}>{this.props.prayer}
             <span style={{dispaly:"inline", fontStyle: "italic"}}> Amen.</span>
           </p>
         </div>
