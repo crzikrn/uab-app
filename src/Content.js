@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Clock from './Clock.js';
 
 //CSS import
 let {paddingSpread} = require('./Css');
@@ -19,7 +20,7 @@ class Prayer extends Component {
         this.state = {
             error: null,
             isLoaded: false,
-            data: []
+            data: [],
         };
     }
 
@@ -28,11 +29,13 @@ class Prayer extends Component {
             .then((res) => res.json())
             .then(
                 (result) => {
-                    console.log(result.prayers) 
+                    console.log(result.prayers)
+                    
                     this.setState({
                         isLoaded: true,
                         data: result.prayers
                     });
+
                 },
                 (error) => {
                     this.setState({
@@ -45,50 +48,37 @@ class Prayer extends Component {
 
     render(){
         const {error, isLoaded, data} = this.state;
+
         if (error) {
             return <div> Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <div>Loading...</div>;
           } else {
+            // let pray =[];
+            // const morning = Object.keys(data.morning).map(key =>
+            //     pray.push(data.morning[key])
+            //     // morning.push(data.morning[key])
+            //     // <div value={key}>{data.morning[key]}</div>
+            // )
+            // const after = Object.keys(data.after).map(key =>
+            //     <div value={key}>{data.after[key]}</div>
+            // )
+
+            for (let item of data){
+                console.log(item)
+            }
+
               return(
-              <div>
-               {console.log(data.after)}
-               {console.log(this.state.data)}
-               <Greeting array={data.after}/>
-              </div>
+               
+                <div>
+                     {console.log(data)}
+                    <Greeting data={data}/>
+
+                </div>
               )
           }
     }
 }
-
-class Clock extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {date: new Date()};
-    }
-    componentDidMount() {
-      this.timerID = setInterval(
-        () => this.tick(),
-        1000
-      );
-    }
-    componentWillUnmount() {
-      clearInterval(this.timerID);
-    }
-    tick() {
-      this.setState({
-        date: new Date()
-      });
-    }
-    render() {
-      return (
-        <div>
-          <h1>{this.state.date.toLocaleTimeString([], {hour12: false})}</h1>
-          {/* <h1>{this.state.date.toLocaleTimeString()}</h1> */}
-        </div>
-      );
-    }
-  }
   
   function Bar(props){
   
@@ -137,57 +127,33 @@ class Clock extends React.Component {
 //   }
 
 
-  class Greeting extends Component{
+class Greeting extends Component{
+    constructor(props){
+        super(props);
+    }
 
     render(){
-      let hours = new Date();
-      let greeting= '';
-      let text = this.props.data;
-    //   JSON.parse(text);
-    //   let jsonObject = JSON.parse(jsonString);
-
-      let obj = {text:"4",text1:"456g"}
-    console.log(text);
-     
+        const data = this.props.data;
+        console.log(data)
+        let hours = newFunction();
     
     if(hours.getHours() > 25){
         return(
           <h1 >You Ready to Start?</h1>
         )
       } 
-      else if(hours.getHours() < 11){
-        console.log(typeof(obj));
-        console.log(obj);
-        // const content = this.props.data.map((d) =>
-        //     <div key={d.title}>
-        //     {d.subtitle}
-        //     </div>
-        
-        // );
-
-    //     Object.keys(text).map((item,i) => 
-    
-    // )
+      else if(hours.getHours() < 11){ 
         return(
-                        <div>
-                       {/* {content} */}
-                        {/* {Object.keys(text).map((item,i) => (
-                            <li key={i}>
-                                {text[item]}
-                            </li>
-                        ))}
-                     */}
-                         <Read />
-                        </div>
-                   
-                    )
+            <div>
+               {/* {this.props.data} */}
+                {/* <h1 >You Ready to Sleep?</h1> */}
+                {/* <Read data={this.props.data}/> */}
+            </div>
+        )
       } 
       else {
         return(
-            <div>
-                <h1 >You Ready to Sleep?</h1>
-                <Read />
-            </div>
+              {/* <Read /> */}     
         )
       }
     }
@@ -197,13 +163,14 @@ class Clock extends React.Component {
     render(){
      
       document.body.style.background = "linear-gradient(135deg, orange, 60%, yellow) fixed";
-  
+      console.log(this.props.title)
       return(
+   
         <div style={{width: "75%",marginTop: "40px"}}>
-          <h1 style={{textAlign: "center"}}>{work}</h1>
-          <h2 style={{textAlign: "center",marginTop: "20px"}}>{subWork}</h2>
-          <p style={{marginTop: "40px"}}>{prayer}
-            <span style={{fontStyle: "italic"}}>Amen.</span>
+          <h1 style={{textAlign: "center"}}>{this.props.title}</h1>
+          <h2 style={{textAlign: "center",marginTop: "20px"}}>{this.props.subtitle}</h2>
+          <p style={{marginTop: "40px"}}>{this.props.prayer}
+            <p style={{dispaly:"inline", fontStyle: "italic"}}>Amen.</p>
           </p>
         </div>
       )
@@ -223,10 +190,16 @@ class Content extends Component {
           <Clock />
           <Bar value="3" />
           <Greeting />
-          {/* <Prayer /> */}
+          <Prayer />
         </div>
       )
     }
   }
 
   export default Content;
+
+function newFunction() {
+    let hours = new Date();
+    let greeting = '';
+    return hours;
+}
