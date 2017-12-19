@@ -37,9 +37,15 @@ class Clock extends Component {
       });
     }
     render() {
+      let hour = this.state.date.getHours();
+      let hours = (hour + 24) % 12 || 12;
+      let minutes = this.state.date.getMinutes();
+      let ampm = hour >= 12 ? 'PM' : 'AM';
+      
       return (
         <div>
-          <h1 style={{color: this.props.color}}>{this.state.date.toLocaleTimeString([],{hour: '2-digit', minute:'2-digit'})}</h1>
+          <h1 style={{color: this.props.color}}>{hours}:{minutes}{ampm}</h1>
+          {/* <h1 style={{color: this.props.color}}>{this.state.date.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</h1> */}
           {/* <h1>{this.state.date.toLocaleTimeString()}</h1> */}
           <Bar value={this.state.date.getSeconds()/60*3} color={this.props.barColor}/>
         </div>
