@@ -1,6 +1,6 @@
 module.exports={
     paddingSpread : {
-       padding: "0px 40px"
+       padding: "0px 30px"
      },
 
      flexSpread : {

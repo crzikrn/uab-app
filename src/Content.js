@@ -71,26 +71,7 @@ class Prayer extends Component {
         }
     }
 }
-  
-
-
-function Bar(props){
-  
-      let width = props.value*50;
-  
-      return(
-        <div style={{
-          background: props.color,
-          width: width+"px",
-          height: "30px",
-          marginTop: "40px"
-        }}>
-        
-        </div>
-      )
     
-  }
-  
 class Greeting extends Component{
     render(){
     const data = this.props.data;
@@ -140,8 +121,7 @@ class Read extends Component {
    
         <div style={{display:"flex",flexDirection:"column",width: "90%",marginBottom:"100px"}}>
           <h1 style={{...timeStyle}}>It's </h1>
-          <Clock color={this.props.color}/>
-          <Bar value="3" color={this.props.bar} />
+          <Clock color={this.props.color} barColor={this.props.bar}/>
           <h1 style={{textAlign: "left", width:"33%", marginTop: "40px", color: this.props.color}}>{this.props.title}</h1>
           <h2 style={{textAlign: "left",marginTop: "80px", color: this.props.bar}}>{this.props.subtitle}</h2>
           <p style={{lineHeight: "36px", marginTop: "80px", color: this.props.colorp}}>{this.props.prayer}
