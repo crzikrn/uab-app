@@ -9,8 +9,9 @@
             {"after" : {
                 "title":"You Ready to Work?",
                 "subtitle":"Prayer upon Beginning Ones Work or Study",
-                "prayer":"My good God, Father, and Saviour, grant me aid by your Holy Spirit to now work fruitfully in my vocation, which is from you, all in order to love you and the people around me rather than for my own gain and glory. Give me wisdom, judgment and prudence, and freedom from my besetting sins. Bring me under the rule of true humility. Let me accept with patience whatever amount of fruitfulness or difficulty in my work that you give me this day. And in all I do, help me to rest always in my Lord Jesus Christ and in his grace alone for my salvation and life. Hear me, merciful Father, by our Lord Jesus Christ, "
-                
+                "prayer":"My good God, Father, and Saviour, grant me aid by your Holy Spirit to now work fruitfully in my vocation, which is from you, all in order to love you and the people around me rather than for my own gain and glory. Give me wisdom, judgment and prudence, and freedom from my besetting sins. Bring me under the rule of true humility. Let me accept with patience whatever amount of fruitfulness or difficulty in my work that you give me this day. And in all I do, help me to rest always in my Lord Jesus Christ and in his grace alone for my salvation and life. Hear me, merciful Father, by our Lord Jesus Christ, ",
+                "color": "white",
+                "bar": "#222"
                 }
             }]
         }

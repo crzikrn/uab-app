@@ -78,11 +78,11 @@ function Bar(props){
   
       return(
         <div style={{
-          background: "black",
+          background: props.color,
           width: width+"px",
           height: "30px",
           marginTop: "40px"
-        }}>{props.value} 
+        }}>
         
         </div>
       )
@@ -95,7 +95,7 @@ class Greeting extends Component{
         console.log(data)
     let hours = newFunction();
     
-    if(hours.getHours() > 6 && hours.getHours() <12){
+    if(hours.getHours() > 6 && hours.getHours() < 21){
         document.body.style.background = "linear-gradient(135deg, cyan, 30%, yellow) fixed";
         return(
             <Read title={data[0].morning.title} subtitle={data[0].morning.subtitle} prayer={data[0].morning.prayer}/>
@@ -109,9 +109,9 @@ class Greeting extends Component{
         )
       } 
       else {
-        document.body.style.background = "linear-gradient(135deg, orange, 60%, yellow) fixed";
+        document.body.style.background = "linear-gradient(160deg, #f39332, 65%, #fef734) fixed";
         return(
-            <Read title={data[1].after.title} subtitle={data[1].after.subtitle} prayer={data[1].after.prayer}/>
+            <Read title={data[1].after.title} subtitle={data[1].after.subtitle} prayer={data[1].after.prayer} color={data[1].after.color} bar={data[1].after.bar}/>
         )
       }
     }
@@ -120,14 +120,21 @@ class Greeting extends Component{
 class Read extends Component {
     render(){
      
-     
-      console.log(this.props.title)
+        let timeStyle = {
+            textAlign: "left",
+            paddingTop: "40px",
+            color: this.props.color
+          }
+      console.log(this.props.color)
       return(
    
-        <div style={{display:"flex",flexDirection:"column",width: "90%",marginTop: "40px",marginBottom:"100px"}}>
-          <h1 style={{textAlign: "left"}}>{this.props.title}</h1>
-          <h2 style={{textAlign: "left",marginTop: "20px"}}>{this.props.subtitle}</h2>
-          <p style={{lineHeight: "33px", marginTop: "40px"}}>{this.props.prayer}
+        <div style={{display:"flex",flexDirection:"column",width: "90%",marginBottom:"100px"}}>
+          <h1 style={{...timeStyle}}>It's </h1>
+          <Clock color={this.props.color}/>
+          <Bar value="3" color={this.props.bar} />
+          <h1 style={{textAlign: "left", width:"33%", marginTop: "40px", color: this.props.color}}>{this.props.title}</h1>
+          <h2 style={{textAlign: "left",marginTop: "80px"}}>{this.props.subtitle}</h2>
+          <p style={{lineHeight: "36px", marginTop: "80px"}}>{this.props.prayer}
             <span style={{dispaly:"inline", fontStyle: "italic"}}> Amen.</span>
           </p>
         </div>
@@ -136,18 +143,9 @@ class Read extends Component {
   }
 
 class Content extends Component {
-    render(){
-      let timeStyle = {
-        textAlign: "left",
-        paddingTop: "30px"
-      }
-      
+    render(){   
       return(
         <div style={{...paddingSpread}}>
-          <h1 style={{...timeStyle}}>It's </h1>
-          <Clock />
-          <Bar value="3" />
-          {/* <Greeting /> */}
           <Prayer />
         </div>
       )

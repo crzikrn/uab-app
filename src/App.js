@@ -18,7 +18,7 @@ class Header extends Component {
     return(
       <div className="headerStyle" style={{...flexSpread, ...paddingSpread, ...headerbox}}>
         <h3>UABDP</h3>
-        <p><a href="">uponafterbefore.com</a></p>
+        <p style={{fontSize: "14px"}}><a href="">uponafterbefore.com</a></p>
         <a href=""><span style={{fontSize: "20px"}}>⇧</span></a>
       </div>
     )
@@ -33,7 +33,8 @@ class Footer extends Component {
       color:"white",
       height: "50px",
       fontStyle:"regular",
-      fontSize: "14px"
+      fontSize: "14px",
+      marginTop: ""
     }
 
     return(
