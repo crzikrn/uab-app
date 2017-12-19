@@ -1,7 +1,7 @@
 {
   "name": "uab-app",
   "version": "0.1.0",
-  "homepage": "https://crzikrn.github.io/uab-app",
+  "homepage": "http://www.uponafterbefore.com",
   "private": true,
   "dependencies": {
     "gh-pages": "^1.1.0",
