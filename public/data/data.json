@@ -1,18 +1,37 @@
 {
-    "prayers" : [{
-        "morning" : {
-                "title":"You Ready to Start?",
-                "subtitle":"Prayer upon Rising from Sleep",
-                "prayer":"My God, Father, and Saviour, since you have been pleased to give me the grace to come through the night to the present day, now grant that I may employ it entirely in your service, so that all my works may be to the glory of your name and the edification of my neighbours. As you have been pleased to make your sun shine upon the earth to give us bodily light, grant the light of your Spirit to illumine my understanding and my heart. And because it means nothing to begin well if one does not persevere, I ask that you would continue to increase your grace in me until you have led me into full communion with your Son, Jesus Christ our Lord, who is the true Sun of our souls, shining day and night, eternally and without end. Hear me, merciful Father, by our Lord Jesus Christ"        
-                }
-            },
-            {"after" : {
-                "title":"You Ready to Work?",
-                "subtitle":"Prayer upon Beginning Ones Work or Study",
-                "prayer":"My good God, Father, and Saviour, grant me aid by your Holy Spirit to now work fruitfully in my vocation, which is from you, all in order to love you and the people around me rather than for my own gain and glory. Give me wisdom, judgment and prudence, and freedom from my besetting sins. Bring me under the rule of true humility. Let me accept with patience whatever amount of fruitfulness or difficulty in my work that you give me this day. And in all I do, help me to rest always in my Lord Jesus Christ and in his grace alone for my salvation and life. Hear me, merciful Father, by our Lord Jesus Christ, ",
-                "color": "white",
-                "bar": "#222"
-                }
-            }]
+    "prayers" : {
+        "start" : {
+            "title":"You Ready to Start?",
+            "subtitle":"Prayer upon Rising from Sleep",
+            "prayer":"My God, Father, and Saviour, since you have been pleased to give me the grace to come through the night to the present day, now grant that I may employ it entirely in your service, so that all my works may be to the glory of your name and the edification of my neighbours. As you have been pleased to make your sun shine upon the earth to give us bodily light, grant the light of your Spirit to illumine my understanding and my heart. And because it means nothing to begin well if one does not persevere, I ask that you would continue to increase your grace in me until you have led me into full communion with your Son, Jesus Christ our Lord, who is the true Sun of our souls, shining day and night, eternally and without end. Hear me, merciful Father, by our Lord Jesus Christ"       
+            ,"color": "white",
+           "bar": "#191919"   
+        },
+            
+        "work" : {
+            "title":"You Ready to Work?",
+            "subtitle":"Prayer upon Beginning Ones Work or Study",
+            "prayer":"My good God, Father, and Saviour, grant me aid by your Holy Spirit to now work fruitfully in my vocation, which is from you, all in order to love you and the people around me rather than for my own gain and glory. Give me wisdom, judgment and prudence, and freedom from my besetting sins. Bring me under the rule of true humility. Let me accept with patience whatever amount of fruitfulness or difficulty in my work that you give me this day. And in all I do, help me to rest always in my Lord Jesus Christ and in his grace alone for my salvation and life. Hear me, merciful Father, by our Lord Jesus Christ, "
+            ,"color": "white",
+            "bar": "#191919"
+        },
+
+        "midday" : {
+            "title":"Had'a Good midday Meal?",
+            "subtitle":"Prayer after Midday Meal",
+            "prayer":"O Lord God, I give you thanks for all the benefits and gifts you constantly shower on me. Thank you for sustaining my physical life through food and shelter; for giving me new life through the gospel; and for the certainty of the best and perfect life, which is yet to come. In light of all these blessings, I ask that you would not allow my affections to be tangled in inordinate desires for the things of this world, but let me always set my heart on things above, where Christ, who is my life, is seated at your right hand. Hear me, merciful Father, by our Lord Jesus Christ, "
+            ,"color": "#191919",
+            "bar": "white"
+        },
+
+        "sleep" : {
+            "title":"You Ready to Sleep?",
+            "subtitle":"Prayer before Sleep",
+            "prayer":"O Lord God, now grant me the grace not only to rest my body this night, but to have my spiritual repose, in soul and conscience, in your grace and love, that I may let go of all earthly cares so I might be comforted and eased in all ways. And because no day passes that I do not sin in so many ways, please bury all my offences in your mercy, that I might not lose your presence. Forgive me, merciful Father, for Christ's sake. And as I lay down in sleep to safely awake again only by your grace, keep me in a joyful, lively remembrance that whatever happens, I will someday know my final rising—the resurrection—because Jesus Christ lay down in death for me, and rose for my justification. In his name I pray, "
+            ,"color": "white",
+            "colorp": "white",
+            "bar": "#1b1a63"
         }
+    }
+}
  

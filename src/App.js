@@ -10,7 +10,7 @@ class Header extends Component {
   render(){
     let headerbox= {
       display: "flex",
-      background: "black",
+      background: "#191919",
       color:"white",
       height: "50px",
     }
@@ -18,8 +18,8 @@ class Header extends Component {
     return(
       <div className="headerStyle" style={{...flexSpread, ...paddingSpread, ...headerbox}}>
         <h3>UABDP</h3>
-        <p style={{fontSize: "14px"}}><a href="">uponafterbefore.com</a></p>
-        <a href=""><span style={{fontSize: "20px"}}>⇧</span></a>
+        {/* <p style={{fontSize: "14px"}}><a href="">uponafterbefore.com</a></p>
+        <a href=""><span style={{fontSize: "20px"}}>⇧</span></a> */}
       </div>
     )
   }
@@ -29,7 +29,7 @@ class Footer extends Component {
   render(){
     let footerBox= {
       display: "flex",
-      background: "black",
+      background: "#191919",
       color:"white",
       height: "50px",
       fontStyle:"regular",

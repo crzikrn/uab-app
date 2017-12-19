@@ -15,8 +15,7 @@ class Prayer extends Component {
         this.state = {
             error: null,
             isLoaded: false,
-            data: [],
-            sendData: null
+            data: []
         };
     }
 
@@ -45,7 +44,11 @@ class Prayer extends Component {
         if (error) {
             return <div> Error: {error.message}</div>;
         } else if (!isLoaded) {
-            return <div>Loading...</div>;
+ 
+            return (
+                <div><h1 style={{lineHeight:"100px",marginTop: "40px", marginBottom: "100px"}}>Prayer Being Loaded Please Wait...</h1></div>
+            )
+
           } else {
             // let pray =[];
             // const morning = Object.keys(data.morning).map(key =>
@@ -91,35 +94,43 @@ function Bar(props){
   
 class Greeting extends Component{
     render(){
-        const data = this.props.data;
-        console.log(data)
-    let hours = newFunction();
+    const data = this.props.data;
+
+    let hours = new Date();
     
-    if(hours.getHours() > 6 && hours.getHours() < 21){
-        document.body.style.background = "linear-gradient(135deg, cyan, 30%, yellow) fixed";
-        return(
-            <Read title={data[0].morning.title} subtitle={data[0].morning.subtitle} prayer={data[0].morning.prayer}/>
-        )
-      } 
-      else if(hours.getHours() < 11){ 
-        return(
-            <div>
-         
-            </div>
-        )
-      } 
-      else {
-        document.body.style.background = "linear-gradient(160deg, #f39332, 65%, #fef734) fixed";
-        return(
-            <Read title={data[1].after.title} subtitle={data[1].after.subtitle} prayer={data[1].after.prayer} color={data[1].after.color} bar={data[1].after.bar}/>
-        )
-      }
+        if(hours.getHours() >= 5 && hours.getHours() < 9){
+            document.body.style.background = "linear-gradient(135deg, #6df8fc, 15%, #71f485,80%, #f7f733) fixed";
+            return(
+            <Read title={data.start.title} subtitle={data.start.subtitle} prayer={data.start.prayer} color={data.start.color} bar={data.start.bar}/>
+            )
+        } 
+
+        else if(hours.getHours() >= 9 && hours.getHours() <= 11){ 
+            document.body.style.background = "linear-gradient(160deg, #f39332, 65%, #fef734) fixed";
+            return(
+                <Read title={data.work.title} subtitle={data.work.subtitle} prayer={data.work.prayer} color={data.work.color} bar={data.work.bar}/>
+            )
+        } 
+
+        else if(hours.getHours() >= 11 && hours.getHours() <= 15){ 
+            document.body.style.background = "linear-gradient(160deg, #fef734, 65%, #f39332) fixed";
+            console.log("midday!")
+            return(
+                <Read title={data.midday.title} subtitle={data.midday.subtitle} prayer={data.midday.prayer} color={data.midday.color} bar={data.midday.bar}/>
+            )
+          } 
+          
+        else {
+            document.body.style.background = "linear-gradient(160deg, #59d1e0, 65%, #1b1a63) fixed";
+            return(
+                <Read title={data.sleep.title} subtitle={data.sleep.subtitle} prayer={data.sleep.prayer} color={data.sleep.color} colorp={data.sleep.colorp} bar={data.sleep.bar}/>
+            )
+        }
     }
   }
   
 class Read extends Component {
     render(){
-     
         let timeStyle = {
             textAlign: "left",
             paddingTop: "40px",
@@ -133,8 +144,8 @@ class Read extends Component {
           <Clock color={this.props.color}/>
           <Bar value="3" color={this.props.bar} />
           <h1 style={{textAlign: "left", width:"33%", marginTop: "40px", color: this.props.color}}>{this.props.title}</h1>
-          <h2 style={{textAlign: "left",marginTop: "80px"}}>{this.props.subtitle}</h2>
-          <p style={{lineHeight: "36px", marginTop: "80px"}}>{this.props.prayer}
+          <h2 style={{textAlign: "left",marginTop: "80px", color: this.props.bar}}>{this.props.subtitle}</h2>
+          <p style={{lineHeight: "36px", marginTop: "80px", color: this.props.colorp}}>{this.props.prayer}
             <span style={{dispaly:"inline", fontStyle: "italic"}}> Amen.</span>
           </p>
         </div>
@@ -153,9 +164,3 @@ class Content extends Component {
   }
 
   export default Content;
-
-function newFunction() {
-    let hours = new Date();
-    let greeting = '';
-    return hours;
-}
