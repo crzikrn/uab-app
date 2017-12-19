@@ -4,7 +4,6 @@ import Clock from './Clock.js';
 
 //CSS import
 let {paddingSpread} = require('./Css');
-let {flexSpreadColumn} = require('./Css');
 
 let url = './data/data.json';
 // let url = 'http://localhost:3000/data/data.json'
@@ -105,20 +104,20 @@ class Greeting extends Component{
             )
         } 
 
-        else if(hours.getHours() >= 9 && hours.getHours() <= 11){ 
-            document.body.style.background = "linear-gradient(160deg, #f39332, 65%, #fef734) fixed";
-            return(
-                <Read title={data.work.title} subtitle={data.work.subtitle} prayer={data.work.prayer} color={data.work.color} bar={data.work.bar}/>
-            )
-        } 
-
-        else if(hours.getHours() >= 11 && hours.getHours() <= 15){ 
+        else if(hours.getHours() > 11 && hours.getHours() <= 14){ 
             document.body.style.background = "linear-gradient(160deg, #fef734, 65%, #f39332) fixed";
             console.log("midday!")
             return(
                 <Read title={data.midday.title} subtitle={data.midday.subtitle} prayer={data.midday.prayer} color={data.midday.color} bar={data.midday.bar}/>
             )
           } 
+
+        else if(hours.getHours() >= 9 && hours.getHours() <= 19){ 
+            document.body.style.background = "linear-gradient(160deg, #f39332, 65%, #fef734) fixed";
+            return(
+                <Read title={data.work.title} subtitle={data.work.subtitle} prayer={data.work.prayer} color={data.work.color} bar={data.work.bar}/>
+            )
+        } 
           
         else {
             document.body.style.background = "linear-gradient(160deg, #59d1e0, 65%, #1b1a63) fixed";
