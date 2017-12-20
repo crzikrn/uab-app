@@ -39,7 +39,8 @@ class Clock extends Component {
     render() {
       let hour = this.state.date.getHours();
       let hours = (hour + 24) % 12 || 12;
-      let minutes = this.state.date.getMinutes();
+      let minute = this.state.date.getMinutes();
+      let minutes = minute > 9 ? minute : '0' + minute;
       let ampm = hour >= 12 ? 'PM' : 'AM';
       
       return (
