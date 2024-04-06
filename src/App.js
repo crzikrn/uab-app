@@ -17,7 +17,7 @@ class Header extends Component {
 
     return(
       <div className="headerStyle" style={{...flexSpread, ...paddingSpread, ...headerbox}}>
-        <h3>UABDP</h3>
+        <h3>Upon, After, Before Daily Prayer</h3>
         {/* <p style={{fontSize: "14px"}}><a href="">uponafterbefore.com</a></p>
         <a href=""><span style={{fontSize: "20px"}}>⇧</span></a> */}
       </div>
