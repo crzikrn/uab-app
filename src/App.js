@@ -39,7 +39,7 @@ class Footer extends Component {
 
     return(
       <div style={{...footerBox,...paddingSpread,...flexSpread}}>
-        <p className="headerStyle">Copyright © 2020 | prayupon.com</p>
+        <p className="headerStyle">Copyright © 2024 | prayupon.com</p>
       </div>
     )
   }
